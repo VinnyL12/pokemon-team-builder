@@ -18,11 +18,22 @@ export const formatStatName = (name: string) =>
 const StatBars = ({
   stats,
   dense = false,
+  columns = 1,
 }: {
   stats: Pokemon["stats"];
   dense?: boolean;
+  columns?: number;
 }) => (
-  <Stack spacing={dense ? 0.4 : 1} sx={{ height: "100%", justifyContent: "space-between" }}>
+  <Box
+    sx={{
+      height: "100%",
+      display: "grid",
+      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      columnGap: 1.5,
+      rowGap: dense ? 0.4 : 1,
+      alignContent: "space-between",
+    }}
+  >
     {stats.map((stat) => (
       <Box key={stat.name}>
         <Stack direction="row" sx={{ justifyContent: "space-between" }}>
@@ -56,7 +67,7 @@ const StatBars = ({
         />
       </Box>
     ))}
-  </Stack>
+  </Box>
 );
 
 export default StatBars;

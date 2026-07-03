@@ -125,13 +125,12 @@ const PokemonShowcaseCard = ({
         sx={{
           flex: 1,
           minHeight: 0,
-          overflow: "auto",
           px: 1.5,
           pb: 1,
           pt: 0.25,
         }}
       >
-        <StatBars stats={pokemon.stats} dense />
+        <StatBars stats={pokemon.stats} dense columns={2} />
       </Box>
     </Card>
   );
