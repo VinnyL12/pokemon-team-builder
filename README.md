@@ -19,14 +19,17 @@ A full-stack web application that allows users to search for Pokémon, build a t
 
 - Search for any Pokémon by name via PokéAPI
 - Add up to 6 Pokémon to your team
-- View Pokémon sprites, types, and stats
+- View Pokémon sprites and types
 - Save your team with a unique shareable link
 - View any saved team via its URL
 
 ## Project Structure
+
+```
 pokemon-team-builder/
 ├── client/          # React + TypeScript frontend
 └── server/          # Node.js + Express + Prisma backend
+```
 
 ## Getting Started
 
@@ -38,27 +41,27 @@ pokemon-team-builder/
 
 1. Clone the repository
 ```bash
-   git clone https://github.com/VinnyL12/pokemon-team-builder.git
-   cd pokemon-team-builder
+git clone https://github.com/VinnyL12/pokemon-team-builder.git
+cd pokemon-team-builder
 ```
 
 2. Install root dependencies
 ```bash
-   npm install
+npm install
 ```
 
 3. Install and set up the server
 ```bash
-   cd server
-   npm install
-   npx prisma generate
-   npx prisma migrate dev --name init
+cd server
+npm install
+npx prisma generate
+npx prisma migrate dev --name init
 ```
 
 4. Install the client
 ```bash
-   cd ../client
-   npm install
+cd ../client
+npm install
 ```
 
 ### Running the App
