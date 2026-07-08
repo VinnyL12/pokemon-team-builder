@@ -1,8 +1,10 @@
 import type { Pokemon, Team } from "../types";
 
+const BASE_URL = import.meta.env.VITE_API_URL ?? "";
+
 export const searchPokemon = async (name: string): Promise<Pokemon> => {
   try {
-    const response = await fetch(`/api/pokemon/search/${name}`);
+    const response = await fetch(`${BASE_URL}/api/pokemon/search/${name}`);
 
     if (!response.ok) {
       throw new Error("Pokemon not found");
@@ -18,7 +20,7 @@ export const searchPokemon = async (name: string): Promise<Pokemon> => {
 
 export const getAllTeams = async (): Promise<Team[]> => {
   try {
-    const response = await fetch("/api/teams");
+    const response = await fetch(`${BASE_URL}/api/teams`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch teams");
@@ -34,7 +36,7 @@ export const getAllTeams = async (): Promise<Team[]> => {
 
 export const getTeamsBySlug = async (slug: string): Promise<Team> => {
   try {
-    const response = await fetch(`/api/teams/${slug}`);
+    const response = await fetch(`${BASE_URL}/api/teams/${slug}`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch teams by slug");
@@ -53,7 +55,7 @@ export const createTeam = async (
   pokemon: Pokemon[],
 ): Promise<Team> => {
   try {
-    const response = await fetch("/api/teams", {
+    const response = await fetch(`${BASE_URL}/api/teams`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
