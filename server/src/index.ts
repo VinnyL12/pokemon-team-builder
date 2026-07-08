@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import pokemonRoutes from './routes/pokemon';
-import teamRoutes from './routes/teams';
+import pokemonRoutes from './routes/pokemon.js';
+import teamRoutes from './routes/teams.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
