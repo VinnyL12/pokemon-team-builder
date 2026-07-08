@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Team {
+  id        Int      @id @default(autoincrement())
+  name      String
+  slug      String   @unique
+  pokemon   String
+  createdAt DateTime @default(now())
+}
